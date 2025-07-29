@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pass Finder - 大学新生发展指南</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Pass Finder</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" onclick="showPage('home')">首页</a></li>
+                <li><a href="#" onclick="showPage('self-awareness')">自我觉察</a></li>
+                <li><a href="#" onclick="showPage('values')">价值澄清</a></li>
+                <li><a href="#" onclick="showPage('future')">未来构想</a></li>
+                <li><a href="#" onclick="showPage('interests')">兴趣试错</a></li>
+                <li><a href="#" onclick="showPage('goals')">目标设定</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首页 -->
+    <div id="home" class="page active">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>发现你的人生方向</h1>
+                <p>Pass Finder 帮助大学新生通过系统化的自我探索，找到属于自己的发展道路。在这里，每一次探索都是成长的开始。</p>
+                <button class="cta-button" onclick="showPage('self-awareness')">开始探索</button>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-cards">
+                    <div class="card card-1">🎯</div>
+                    <div class="card card-2">💡</div>
+                    <div class="card card-3">🌟</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="modules-overview">
+            <div class="container">
+                <h2>探索之旅的五个阶段</h2>
+                <div class="modules-grid">
+                    <div class="module-card" onclick="showPage('self-awareness')">
+                        <div class="module-icon">🔍</div>
+                        <h3>自我觉察</h3>
+                        <p>我现在在哪？</p>
+                        <span class="module-desc">通过情绪日记、心理测试和关键词云，深入了解当前的自己</span>
+                    </div>
+                    <div class="module-card" onclick="showPage('values')">
+                        <div class="module-icon">💎</div>
+                        <h3>价值澄清</h3>
+                        <p>我在乎什么？</p>
+                        <span class="module-desc">通过价值观选择、提问卡片和AI总结，明确核心价值观</span>
+                    </div>
+                    <div class="module-card" onclick="showPage('future')">
+                        <div class="module-icon">🚀</div>
+                        <h3>未来构想</h3>
+                        <p>我能成为什么样的人？</p>
+                        <span class="module-desc">通过人生画板、模拟构建和资源地图，描绘未来可能</span>
+                    </div>
+                    <div class="module-card" onclick="showPage('interests')">
+                        <div class="module-icon">🎲</div>
+                        <h3>兴趣试错</h3>
+                        <p>我去试试看</p>
+                        <span class="module-desc">通过14天挑战、行动打卡和试错日志，验证兴趣方向</span>
+                    </div>
+                    <div class="module-card" onclick="showPage('goals')">
+                        <div class="module-icon">🎯</div>
+                        <h3>目标设定</h3>
+                        <p>我想要做的事</p>
+                        <span class="module-desc">通过SMART目标、三角图和AI助手，制定清晰行动计划</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 自我觉察模块 -->
+    <div id="self-awareness" class="page">
+        <div class="page-header">
+            <div class="container">
+                <h1>自我觉察 - 我现在在哪？</h1>
+                <p>通过记录和反思，更好地了解当前的自己</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>情绪日记</h3>
+                    <p>记录每日情绪变化，识别情绪模式</p>
+                    <button class="feature-btn" onclick="openMoodDiary()">开始记录</button>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>心理测试合集</h3>
+                    <p>专业心理测试，深入了解性格特质</p>
+                    <button class="feature-btn" onclick="openPsychTests()">开始测试</button>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">☁️</div>
+                    <h3>关键词云</h3>
+                    <p>生成个人特质词云，可视化自我认知</p>
+                    <button class="feature-btn" onclick="openWordCloud()">生成词云</button>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>阶段总结</h3>
+                    <p>定期回顾和总结，追踪成长轨迹</p>
+                    <button class="feature-btn" onclick="openSummary()">查看总结</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 情绪日记界面 -->
+        <div id="mood-diary" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeMoodDiary()">&times;</span>
+                <h2>今日情绪记录</h2>
+                <div class="mood-selector">
+                    <div class="mood-options">
+                        <div class="mood-option" data-mood="happy">😊 开心</div>
+                        <div class="mood-option" data-mood="sad">😢 难过</div>
+                        <div class="mood-option" data-mood="angry">😠 愤怒</div>
+                        <div class="mood-option" data-mood="anxious">😰 焦虑</div>
+                        <div class="mood-option" data-mood="calm">😌 平静</div>
+                        <div class="mood-option" data-mood="excited">🤩 兴奋</div>
+                    </div>
+                </div>
+                <textarea placeholder="描述一下今天发生了什么，你的感受如何？" rows="6"></textarea>
+                <button class="save-btn">保存日记</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 价值澄清模块 -->
+    <div id="values" class="page">
+        <div class="page-header">
+            <div class="container">
+                <h1>价值澄清 - 我在乎什么？</h1>
+                <p>探索和明确你的核心价值观</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚖️</div>
+                    <h3>价值观选择器</h3>
+                    <p>从众多价值观中选择最重要的</p>
+                    <button class="feature-btn" onclick="openValueSelector()">开始选择</button>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🃏</div>
+                    <h3>提问卡片</h3>
+                    <p>通过深度提问探索内心想法</p>
+                    <button class="feature-btn" onclick="openQuestionCards()">抽取卡片</button>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📔</div>
+                    <h3>价值印象笔记</h3>
+                    <p>记录价值观相关的思考和感悟</p>
+                    <button class="feature-btn" onclick="openValueNotes()">写笔记</button>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI辅助总结</h3>
+                    <p>AI帮助整理和总结你的价值观</p>
+                    <button class="feature-btn" onclick="openAISummary()">生成总结</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 未来构想模块 -->
+    <div id="future" class="page">
+        <div class="page-header">
+            <div class="container">
+                <h1>未来构想 - 我能成为什么样的人？</h1>
+                <p>想象和规划你的未来可能性</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>三种未来人生画板</h3>
+                    <p>描绘三种不同的人生可能</p>
+                    <button class="feature-btn" onclick="openLifeCanvas()">开始绘制</button>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎮</div>
+                    <h3>模拟人生构建器</h3>
+                    <p>模拟不同选择带来的人生轨迹</p>
+                    <button class="feature-btn" onclick="openLifeSimulator()">开始模拟</button>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🗺️</div>
+                    <h3>校园资源地图</h3>
+                    <p>发现校园内的发展机会和资源</p>
+                    <button class="feature-btn" onclick="openResourceMap()">探索资源</button>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⭐</div>
+                    <h3>青年人物故事</h3>
+                    <p>从优秀青年的故事中获得灵感</p>
+                    <button class="feature-btn" onclick="openStories()">阅读故事</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 兴趣试错模块 -->
+    <div id="interests" class="page">
+        <div class="page-header">
+            <div class="container">
+                <h1>兴趣试错 - 我去试试看</h1>
+                <p>通过实际行动探索和验证兴趣</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>14天兴趣挑战</h3>
+                    <p>生成个性化的兴趣探索挑战</p>
+                    <button class="feature-btn" onclick="openChallengeGenerator()">生成挑战</button>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3>每日行动打卡</h3>
+                    <p>记录和追踪每日的探索行动</p>
+                    <button class="feature-btn" onclick="openDailyCheckin()">今日打卡</button>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>试错日志模板</h3>
+                    <p>结构化记录试错过程和收获</p>
+                    <button class="feature-btn" onclick="openTrialLog()">写日志</button>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>AI辅助复盘</h3>
+                    <p>AI帮助分析试错结果和下一步</p>
+                    <button class="feature-btn" onclick="openAIReview()">开始复盘</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 目标设定模块 -->
+    <div id="goals" class="page">
+        <div class="page-header">
+            <div class="container">
+                <h1>目标设定 - 我想要做的事</h1>
+                <p>制定清晰可行的目标和行动计划</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>SMART目标制定器</h3>
+                    <p>制定具体、可衡量、可达成的目标</p>
+                    <button class="feature-btn" onclick="openSMARTGoals()">制定目标</button>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📐</div>
+                    <h3>三角图生成器</h3>
+                    <p>可视化目标的重要性、紧急性和可行性</p>
+                    <button class="feature-btn" onclick="openTriangleChart()">生成图表</button>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>阶段性目标面板</h3>
+                    <p>管理短期、中期和长期目标</p>
+                    <button class="feature-btn" onclick="openGoalDashboard()">查看面板</button>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI助手功能</h3>
+                    <p>AI协助目标规划和进度跟踪</p>
+                    <button class="feature-btn" onclick="openAIAssistant()">咨询AI</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 进度指示器 -->
+    <div class="progress-indicator">
+        <div class="progress-steps">
+            <div class="step active" data-step="self-awareness">1</div>
+            <div class="step" data-step="values">2</div>
+            <div class="step" data-step="future">3</div>
+            <div class="step" data-step="interests">4</div>
+            <div class="step" data-step="goals">5</div>
+        </div>
+    </div>
+
+    <!-- 浮动操作按钮 -->
+    <div class="fab">
+        <button class="fab-main" onclick="toggleFabMenu()">+</button>
+        <div class="fab-menu">
+            <button class="fab-item" onclick="showPage('home')" title="首页">🏠</button>
+            <button class="fab-item" onclick="openHelp()" title="帮助">❓</button>
+            <button class="fab-item" onclick="openSettings()" title="设置">⚙️</button>
+        </div>
+    </div>
+
+    <!-- PathBot AI顾问浮动按钮和聊天窗口 -->
+    <div id="pathbot-fab" title="AI顾问PathBot">🤖</div>
+    <div id="pathbot-chat" class="pathbot-hidden">
+        <div class="pathbot-header">
+            <span>PathBot 智能顾问</span>
+            <button id="pathbot-close">×</button>
+        </div>
+        <div id="pathbot-messages"></div>
+        <div class="pathbot-input-area">
+            <input type="text" id="pathbot-input" placeholder="请输入你的问题..." />
+            <button id="pathbot-send">发送</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
