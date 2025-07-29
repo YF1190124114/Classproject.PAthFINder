@@ -1,26 +1,24 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pass Finder - 大学新生发展指南</title>
+    <title>Pass Finder - Start with Small Plans to Discover Yourself</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="interactive-effects.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- 导航栏 -->
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
                 <h2>Pass Finder</h2>
             </div>
             <ul class="nav-menu">
-                <li><a href="#" onclick="showPage('home')">首页</a></li>
-                <li><a href="#" onclick="showPage('self-awareness')">自我觉察</a></li>
-                <li><a href="#" onclick="showPage('values')">价值澄清</a></li>
-                <li><a href="#" onclick="showPage('future')">未来构想</a></li>
-                <li><a href="#" onclick="showPage('interests')">兴趣试错</a></li>
-                <li><a href="#" onclick="showPage('goals')">目标设定</a></li>
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('explore-history')">Journey</a></li>
+                <li><a href="#" onclick="openHelp()">Help</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -30,312 +28,353 @@
         </div>
     </nav>
 
-    <!-- 首页 -->
+    <!-- Home Page -->
     <div id="home" class="page active">
         <section class="hero">
             <div class="hero-content">
-                <h1>发现你的人生方向</h1>
-                <p>Pass Finder 帮助大学新生通过系统化的自我探索，找到属于自己的发展道路。在这里，每一次探索都是成长的开始。</p>
-                <button class="cta-button" onclick="showPage('self-awareness')">开始探索</button>
-            </div>
-            <div class="hero-visual">
-                <div class="floating-cards">
-                    <div class="card card-1">🎯</div>
-                    <div class="card card-2">💡</div>
-                    <div class="card card-3">🌟</div>
+                <div class="hero-text">
+                    <h1>Start with small plans to slowly discover your true self</h1>
+                    <p>Exploration isn't about getting it right, it's about allowing yourself to try and learn. Let's walk together.</p>
+                    <button class="cta-button" onclick="showPage('plan-selection')">
+                        <span>Begin Exploration</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M4.16667 10H15.8333M15.8333 10L10.8333 5M15.8333 10L10.8333 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </section>
 
-        <section class="modules-overview">
+        <section class="philosophy-section">
             <div class="container">
-                <h2>探索之旅的五个阶段</h2>
-                <div class="modules-grid">
-                    <div class="module-card" onclick="showPage('self-awareness')">
-                        <div class="module-icon">🔍</div>
-                        <h3>自我觉察</h3>
-                        <p>我现在在哪？</p>
-                        <span class="module-desc">通过情绪日记、心理测试和关键词云，深入了解当前的自己</span>
+                <div class="section-header">
+                    <h2>Our Philosophy</h2>
+                    <p>Four principles that guide every exploration</p>
+                </div>
+                <div class="philosophy-grid">
+                    <div class="philosophy-card">
+                        <div class="card-number">01</div>
+                        <h3>Low Barrier to Entry</h3>
+                        <p>No intimidation, no high demands - each small plan takes just a few minutes</p>
                     </div>
-                    <div class="module-card" onclick="showPage('values')">
-                        <div class="module-icon">💎</div>
-                        <h3>价值澄清</h3>
-                        <p>我在乎什么？</p>
-                        <span class="module-desc">通过价值观选择、提问卡片和AI总结，明确核心价值观</span>
+                    <div class="philosophy-card">
+                        <div class="card-number">02</div>
+                        <h3>Feedback After Experience</h3>
+                        <p>Not a one-time decision for life - you can adjust direction anytime</p>
                     </div>
-                    <div class="module-card" onclick="showPage('future')">
-                        <div class="module-icon">🚀</div>
-                        <h3>未来构想</h3>
-                        <p>我能成为什么样的人？</p>
-                        <span class="module-desc">通过人生画板、模拟构建和资源地图，描绘未来可能</span>
+                    <div class="philosophy-card">
+                        <div class="card-number">03</div>
+                        <h3>Gradually Clarify Interests</h3>
+                        <p>Through exploratory decision-making, slowly discover your true interests</p>
                     </div>
-                    <div class="module-card" onclick="showPage('interests')">
-                        <div class="module-icon">🎲</div>
-                        <h3>兴趣试错</h3>
-                        <p>我去试试看</p>
-                        <span class="module-desc">通过14天挑战、行动打卡和试错日志，验证兴趣方向</span>
-                    </div>
-                    <div class="module-card" onclick="showPage('goals')">
-                        <div class="module-icon">🎯</div>
-                        <h3>目标设定</h3>
-                        <p>我想要做的事</p>
-                        <span class="module-desc">通过SMART目标、三角图和AI助手，制定清晰行动计划</span>
+                    <div class="philosophy-card">
+                        <div class="card-number">04</div>
+                        <h3>Non-Performance Oriented</h3>
+                        <p>No "you should", only "why don't you try"</p>
                     </div>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- 自我觉察模块 -->
-    <div id="self-awareness" class="page">
+    <!-- Page 1: Select Exploration Plan -->
+    <div id="plan-selection" class="page">
         <div class="page-header">
             <div class="container">
-                <h1>自我觉察 - 我现在在哪？</h1>
-                <p>通过记录和反思，更好地了解当前的自己</p>
+                <div class="breadcrumb">
+                    <span onclick="showPage('home')">Home</span>
+                    <span class="separator">/</span>
+                    <span>Plans</span>
+                </div>
+                <h1>Choose Your Next Small Plan</h1>
+                <p>Select a direction that interests you. Each plan is designed to be completed in minutes, not hours.</p>
             </div>
         </div>
         
         <div class="container">
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📝</div>
-                    <h3>情绪日记</h3>
-                    <p>记录每日情绪变化，识别情绪模式</p>
-                    <button class="feature-btn" onclick="openMoodDiary()">开始记录</button>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🧠</div>
-                    <h3>心理测试合集</h3>
-                    <p>专业心理测试，深入了解性格特质</p>
-                    <button class="feature-btn" onclick="openPsychTests()">开始测试</button>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">☁️</div>
-                    <h3>关键词云</h3>
-                    <p>生成个人特质词云，可视化自我认知</p>
-                    <button class="feature-btn" onclick="openWordCloud()">生成词云</button>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>阶段总结</h3>
-                    <p>定期回顾和总结，追踪成长轨迹</p>
-                    <button class="feature-btn" onclick="openSummary()">查看总结</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- 情绪日记界面 -->
-        <div id="mood-diary" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeMoodDiary()">&times;</span>
-                <h2>今日情绪记录</h2>
-                <div class="mood-selector">
-                    <div class="mood-options">
-                        <div class="mood-option" data-mood="happy">😊 开心</div>
-                        <div class="mood-option" data-mood="sad">😢 难过</div>
-                        <div class="mood-option" data-mood="angry">😠 愤怒</div>
-                        <div class="mood-option" data-mood="anxious">😰 焦虑</div>
-                        <div class="mood-option" data-mood="calm">😌 平静</div>
-                        <div class="mood-option" data-mood="excited">🤩 兴奋</div>
+            <div class="plans-grid">
+                <div class="plan-card" onclick="selectPlan('digital-art')">
+                    <div class="plan-header">
+                        <div class="plan-icon">🎨</div>
+                        <div class="plan-meta">
+                            <span class="plan-category">Creative</span>
+                            <span class="plan-time">10 min</span>
+                        </div>
+                    </div>
+                    <h3>Digital Art</h3>
+                    <p>Watch a 5-minute digital illustration tutorial + draw a simple line sketch</p>
+                    <div class="plan-action">
+                        <span>Start Plan</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M3.33333 8H12.6667M12.6667 8L8.66667 4M12.6667 8L8.66667 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                     </div>
                 </div>
-                <textarea placeholder="描述一下今天发生了什么，你的感受如何？" rows="6"></textarea>
-                <button class="save-btn">保存日记</button>
+                
+                <div class="plan-card" onclick="selectPlan('expression')">
+                    <div class="plan-header">
+                        <div class="plan-icon">🎤</div>
+                        <div class="plan-meta">
+                            <span class="plan-category">Communication</span>
+                            <span class="plan-time">5 min</span>
+                        </div>
+                    </div>
+                    <h3>Expression Skills</h3>
+                    <p>Record a 1-minute video sharing something happy that happened recently</p>
+                    <div class="plan-action">
+                        <span>Start Plan</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M3.33333 8H12.6667M12.6667 8L8.66667 4M12.6667 8L8.66667 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="plan-card" onclick="selectPlan('emotion')">
+                    <div class="plan-header">
+                        <div class="plan-icon">🧠</div>
+                        <div class="plan-meta">
+                            <span class="plan-category">Psychology</span>
+                            <span class="plan-time">2 min</span>
+                        </div>
+                    </div>
+                    <h3>Emotional Awareness</h3>
+                    <p>Use an Emoji to record your mood today and write one sentence explaining it</p>
+                    <div class="plan-action">
+                        <span>Start Plan</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M3.33333 8H12.6667M12.6667 8L8.66667 4M12.6667 8L8.66667 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="plan-card" onclick="selectPlan('creation')">
+                    <div class="plan-header">
+                        <div class="plan-icon">🎬</div>
+                        <div class="plan-meta">
+                            <span class="plan-category">Creative</span>
+                            <span class="plan-time">10 min</span>
+                        </div>
+                    </div>
+                    <h3>Creative Exploration</h3>
+                    <p>Film a 10-second vlog clip recording your current feelings</p>
+                    <div class="plan-action">
+                        <span>Start Plan</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M3.33333 8H12.6667M12.6667 8L8.66667 4M12.6667 8L8.66667 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="plan-card" onclick="selectPlan('writing')">
+                    <div class="plan-header">
+                        <div class="plan-icon">✍️</div>
+                        <div class="plan-meta">
+                            <span class="plan-category">Writing</span>
+                            <span class="plan-time">8 min</span>
+                        </div>
+                    </div>
+                    <h3>Written Expression</h3>
+                    <p>Write a 100-word short story with the theme "A small discovery today"</p>
+                    <div class="plan-action">
+                        <span>Start Plan</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M3.33333 8H12.6667M12.6667 8L8.66667 4M12.6667 8L8.66667 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- 价值澄清模块 -->
-    <div id="values" class="page">
+    <!-- Page 2: Execute Plan & Upload Feedback -->
+    <div id="plan-execution" class="page">
         <div class="page-header">
             <div class="container">
-                <h1>价值澄清 - 我在乎什么？</h1>
-                <p>探索和明确你的核心价值观</p>
+                <div class="breadcrumb">
+                    <span onclick="showPage('home')">Home</span>
+                    <span class="separator">/</span>
+                    <span onclick="showPage('plan-selection')">Plans</span>
+                    <span class="separator">/</span>
+                    <span>Execute</span>
+                </div>
+                <h1 id="execution-title">Start your small plan</h1>
+                <p id="execution-subtitle">Follow the guide to complete this simple exploration</p>
             </div>
         </div>
         
         <div class="container">
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">⚖️</div>
-                    <h3>价值观选择器</h3>
-                    <p>从众多价值观中选择最重要的</p>
-                    <button class="feature-btn" onclick="openValueSelector()">开始选择</button>
+            <div class="execution-container">
+                <div class="plan-detail-card">
+                    <div class="plan-detail-header">
+                        <div class="plan-detail-icon" id="detail-icon">🎨</div>
+                        <div class="plan-detail-info">
+                            <h2 id="detail-title">Digital Art Exploration</h2>
+                            <span class="plan-status">In Progress</span>
+                        </div>
+                    </div>
+                    <div class="plan-steps" id="plan-steps">
+                        <!-- Dynamic content -->
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🃏</div>
-                    <h3>提问卡片</h3>
-                    <p>通过深度提问探索内心想法</p>
-                    <button class="feature-btn" onclick="openQuestionCards()">抽取卡片</button>
+                
+                <div class="completion-section">
+                    <h3>Completion Status</h3>
+                    <p>Let us know how it went</p>
+                    <div class="completion-buttons">
+                        <button class="completion-btn completed" onclick="markCompleted(true)">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Completed
+                        </button>
+                        <button class="completion-btn skip" onclick="markCompleted(false)">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 18.3333C14.6024 18.3333 18.3334 14.6024 18.3334 10C18.3334 5.39763 14.6024 1.66667 10 1.66667C5.39771 1.66667 1.66675 5.39763 1.66675 10C1.66675 14.6024 5.39771 18.3333 10 18.3333Z" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M12.5 7.5L7.5 12.5M7.5 7.5L12.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            Skip for now
+                        </button>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📔</div>
-                    <h3>价值印象笔记</h3>
-                    <p>记录价值观相关的思考和感悟</p>
-                    <button class="feature-btn" onclick="openValueNotes()">写笔记</button>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🤖</div>
-                    <h3>AI辅助总结</h3>
-                    <p>AI帮助整理和总结你的价值观</p>
-                    <button class="feature-btn" onclick="openAISummary()">生成总结</button>
+                
+                <div class="feedback-section" id="feedback-section" style="display: none;">
+                    <h3>How was your experience?</h3>
+                    <p>Your honest feedback helps us recommend better plans</p>
+                    <div class="feedback-buttons">
+                        <button class="feedback-btn love" onclick="submitFeedback('love')">
+                            <span class="feedback-emoji">😍</span>
+                            <span>Loved it</span>
+                        </button>
+                        <button class="feedback-btn neutral" onclick="submitFeedback('neutral')">
+                            <span class="feedback-emoji">🤔</span>
+                            <span>It was okay</span>
+                        </button>
+                        <button class="feedback-btn dislike" onclick="submitFeedback('dislike')">
+                            <span class="feedback-emoji">🙁</span>
+                            <span>Not for me</span>
+                        </button>
+                    </div>
+                    
+                    <div class="feedback-text">
+                        <textarea placeholder="Any additional thoughts? (optional)" id="feedback-text"></textarea>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 未来构想模块 -->
-    <div id="future" class="page">
+    <!-- Page 3: Next Step Recommendations -->
+    <div id="recommendations" class="page">
         <div class="page-header">
             <div class="container">
-                <h1>未来构想 - 我能成为什么样的人？</h1>
-                <p>想象和规划你的未来可能性</p>
+                <div class="breadcrumb">
+                    <span onclick="showPage('home')">Home</span>
+                    <span class="separator">/</span>
+                    <span>Recommendations</span>
+                </div>
+                <h1 id="recommendation-title">Awesome!</h1>
+                <p id="recommendation-subtitle">Based on your feedback, we've prepared next steps for your exploration</p>
             </div>
         </div>
         
         <div class="container">
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🎨</div>
-                    <h3>三种未来人生画板</h3>
-                    <p>描绘三种不同的人生可能</p>
-                    <button class="feature-btn" onclick="openLifeCanvas()">开始绘制</button>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎮</div>
-                    <h3>模拟人生构建器</h3>
-                    <p>模拟不同选择带来的人生轨迹</p>
-                    <button class="feature-btn" onclick="openLifeSimulator()">开始模拟</button>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🗺️</div>
-                    <h3>校园资源地图</h3>
-                    <p>发现校园内的发展机会和资源</p>
-                    <button class="feature-btn" onclick="openResourceMap()">探索资源</button>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⭐</div>
-                    <h3>青年人物故事</h3>
-                    <p>从优秀青年的故事中获得灵感</p>
-                    <button class="feature-btn" onclick="openStories()">阅读故事</button>
-                </div>
+            <div class="recommendation-container" id="recommendation-content">
+                <!-- Dynamic content -->
             </div>
         </div>
     </div>
 
-    <!-- 兴趣试错模块 -->
-    <div id="interests" class="page">
+    <!-- Page 4: Exploration History / Interest Map -->
+    <div id="explore-history" class="page">
         <div class="page-header">
             <div class="container">
-                <h1>兴趣试错 - 我去试试看</h1>
-                <p>通过实际行动探索和验证兴趣</p>
+                <div class="breadcrumb">
+                    <span onclick="showPage('home')">Home</span>
+                    <span class="separator">/</span>
+                    <span>Journey</span>
+                </div>
+                <h1>Your Exploration Journey</h1>
+                <p>Track your progress and discover patterns in your interests</p>
             </div>
         </div>
         
         <div class="container">
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>14天兴趣挑战</h3>
-                    <p>生成个性化的兴趣探索挑战</p>
-                    <button class="feature-btn" onclick="openChallengeGenerator()">生成挑战</button>
+            <div class="history-container">
+                <div class="history-section interest-map">
+                    <div class="section-header">
+                        <h2>Interest Map</h2>
+                        <p>Visual representation of your explored areas</p>
+                    </div>
+                    <div class="interest-bubbles" id="interest-bubbles">
+                        <!-- Dynamically generated interest bubbles -->
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">✅</div>
-                    <h3>每日行动打卡</h3>
-                    <p>记录和追踪每日的探索行动</p>
-                    <button class="feature-btn" onclick="openDailyCheckin()">今日打卡</button>
+                
+                <div class="history-section history-timeline">
+                    <div class="section-header">
+                        <h2>Recent Activity</h2>
+                        <p>Your exploration timeline</p>
+                    </div>
+                    <div class="timeline" id="timeline">
+                        <!-- Dynamically generated timeline -->
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📋</div>
-                    <h3>试错日志模板</h3>
-                    <p>结构化记录试错过程和收获</p>
-                    <button class="feature-btn" onclick="openTrialLog()">写日志</button>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔄</div>
-                    <h3>AI辅助复盘</h3>
-                    <p>AI帮助分析试错结果和下一步</p>
-                    <button class="feature-btn" onclick="openAIReview()">开始复盘</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 目标设定模块 -->
-    <div id="goals" class="page">
-        <div class="page-header">
-            <div class="container">
-                <h1>目标设定 - 我想要做的事</h1>
-                <p>制定清晰可行的目标和行动计划</p>
-            </div>
-        </div>
-        
-        <div class="container">
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>SMART目标制定器</h3>
-                    <p>制定具体、可衡量、可达成的目标</p>
-                    <button class="feature-btn" onclick="openSMARTGoals()">制定目标</button>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📐</div>
-                    <h3>三角图生成器</h3>
-                    <p>可视化目标的重要性、紧急性和可行性</p>
-                    <button class="feature-btn" onclick="openTriangleChart()">生成图表</button>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>阶段性目标面板</h3>
-                    <p>管理短期、中期和长期目标</p>
-                    <button class="feature-btn" onclick="openGoalDashboard()">查看面板</button>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🤖</div>
-                    <h3>AI助手功能</h3>
-                    <p>AI协助目标规划和进度跟踪</p>
-                    <button class="feature-btn" onclick="openAIAssistant()">咨询AI</button>
+                
+                <div class="history-section saved-plans">
+                    <div class="section-header">
+                        <h2>Recommended Plans</h2>
+                        <p>Plans you might want to try next</p>
+                    </div>
+                    <div class="saved-plans-grid" id="saved-plans">
+                        <!-- Dynamically generated saved plans -->
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 进度指示器 -->
-    <div class="progress-indicator">
-        <div class="progress-steps">
-            <div class="step active" data-step="self-awareness">1</div>
-            <div class="step" data-step="values">2</div>
-            <div class="step" data-step="future">3</div>
-            <div class="step" data-step="interests">4</div>
-            <div class="step" data-step="goals">5</div>
-        </div>
-    </div>
-
-    <!-- 浮动操作按钮 -->
+    <!-- Floating Action Button -->
     <div class="fab">
-        <button class="fab-main" onclick="toggleFabMenu()">+</button>
+        <button class="fab-main" onclick="toggleFabMenu()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
         <div class="fab-menu">
-            <button class="fab-item" onclick="showPage('home')" title="首页">🏠</button>
-            <button class="fab-item" onclick="openHelp()" title="帮助">❓</button>
-            <button class="fab-item" onclick="openSettings()" title="设置">⚙️</button>
+            <button class="fab-item" onclick="showPage('home')" title="Home">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M7.13478 18.7733V15.7156C7.13478 14.9351 7.77217 14.2977 8.55844 14.2977H11.4326C11.8102 14.2977 12.1723 14.4485 12.4393 14.7163C12.7063 14.9841 12.8563 15.3477 12.8563 15.7267V18.7733C12.8539 19.0978 12.9821 19.4099 13.2124 19.6402C13.4427 19.8705 13.7561 20 14.0829 20H16.0438C16.9596 20.0023 17.8388 19.6428 18.4872 19.0008C19.1356 18.3588 19.5 17.487 19.5 16.5778V7.86686C19.5 7.13246 19.1721 6.43584 18.6046 5.96467L11.934 0.675869C10.7737 -0.251438 9.11111 -0.221498 7.98539 0.746979L1.46701 5.96467C0.872741 6.42195 0.517552 7.12064 0.5 7.86686V16.5689C0.5 18.4639 2.04738 20 3.95617 20H5.87229C6.55123 20 7.103 19.4562 7.103 18.7822L7.13478 18.7733Z" fill="currentColor"/>
+                </svg>
+            </button>
+            <button class="fab-item" onclick="showPage('plan-selection')" title="New Plan">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M10 1.66667V18.3333M1.66667 10H18.3333" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <button class="fab-item" onclick="showPage('explore-history')" title="Journey">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M10 11.6667C11.3807 11.6667 12.5 10.5474 12.5 9.16667C12.5 7.78595 11.3807 6.66667 10 6.66667C8.61929 6.66667 7.5 7.78595 7.5 9.16667C7.5 10.5474 8.61929 11.6667 10 11.6667Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M10 1.66667C8.07681 1.66667 6.23229 2.43006 4.85702 3.80533C3.48175 5.1806 2.71836 7.02512 2.71836 8.94833C2.71836 11.3683 4.03169 14.0267 6.66669 16.6667C7.84169 17.8417 8.91669 18.7267 10 19.3217C11.0834 18.7267 12.1584 17.8417 13.3334 16.6667C15.9684 14.0267 17.2817 11.3683 17.2817 8.94833C17.2817 7.02512 16.5183 5.1806 15.143 3.80533C13.7678 2.43006 11.9232 1.66667 10 1.66667V1.66667Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
         </div>
     </div>
 
-    <!-- PathBot AI顾问浮动按钮和聊天窗口 -->
-    <div id="pathbot-fab" title="AI顾问PathBot">🤖</div>
+    <!-- PathBot AI Advisor Floating Button and Chat Window -->
+    <div id="pathbot-fab" title="AI Advisor PathBot">🤖</div>
     <div id="pathbot-chat" class="pathbot-hidden">
         <div class="pathbot-header">
-            <span>PathBot 智能顾问</span>
+            <span>PathBot Exploration Buddy</span>
             <button id="pathbot-close">×</button>
         </div>
         <div id="pathbot-messages"></div>
         <div class="pathbot-input-area">
-            <input type="text" id="pathbot-input" placeholder="请输入你的问题..." />
-            <button id="pathbot-send">发送</button>
+            <input type="text" id="pathbot-input" placeholder="What would you like to chat about..." />
+            <button id="pathbot-send">Send</button>
         </div>
     </div>
 
     <script src="script.js"></script>
+    <script src="interactive-effects.js"></script>
 </body>
 </html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>掉落图片测试</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .test-info {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+            z-index: 1000;
+            max-width: 300px;
+        }
+        
+        .test-info h2 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        
+        .test-info p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        
+        .gamma-value {
+            font-weight: bold;
+            color: #007AFF;
+        }
+        
+        .tilt-status {
+            font-weight: bold;
+        }
+        
+        .tilt-enabled {
+            color: #28a745;
+        }
+        
+        .tilt-disabled {
+            color: #dc3545;
+        }
+    </style>
+    <link rel="stylesheet" href="interactive-effects.css">
+</head>
+<body>
+    <div class="test-info">
+        <h2>掉落图片测试</h2>
+        <p>倾斜角度: <span class="gamma-value" id="gamma-value">0°</span></p>
+        <p>陀螺仪状态: <span class="tilt-status" id="tilt-status">未启用</span></p>
+        <p>掉落对象数量: <span id="object-count">0</span></p>
+        <p>堆叠对象数量: <span id="stacked-count">0</span></p>
+    </div>
+
+    <script src="interactive-effects.js"></script>
+    <script>
+        // 更新测试信息
+        function updateTestInfo() {
+            const gammaValue = document.getElementById('gamma-value');
+            const tiltStatus = document.getElementById('tilt-status');
+            const objectCount = document.getElementById('object-count');
+            const stackedCount = document.getElementById('stacked-count');
+            
+            if (window.interactiveEffects) {
+                gammaValue.textContent = window.interactiveEffects.gamma.toFixed(1) + '°';
+                
+                if (window.interactiveEffects.tiltEnabled) {
+                    tiltStatus.textContent = '已启用';
+                    tiltStatus.className = 'tilt-status tilt-enabled';
+                } else {
+                    tiltStatus.textContent = '未启用';
+                    tiltStatus.className = 'tilt-status tilt-disabled';
+                }
+                
+                objectCount.textContent = window.interactiveEffects.fallingObjects.length;
+                stackedCount.textContent = window.interactiveEffects.stackedObjects.length;
+            }
+        }
+        
+        // 每秒更新一次信息
+        setInterval(updateTestInfo, 1000);
+        
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('测试页面已加载');
+        });
+    </script>
+</body>
+</html> 
